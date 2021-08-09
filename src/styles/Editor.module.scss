@@ -1,0 +1,15 @@
+@import 'globals';
+
+.aside{
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: $yellow;
+  height: 100vh;
+}
+
+.main{
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh;
+  background-color: $purple;
+}
