@@ -4,7 +4,7 @@ import PersonalInput from './PersonalInput';
 
 let sections = ['personal', 'education', 'experience', 'skills']
 
-interface Institution {
+export interface Institution {
   name: string,
   qualification?: string,
   from?: Date,
@@ -46,7 +46,7 @@ export interface CV {
 
 export const ACTIONS = {
   UPDATE_PERSONAL: 'update-personal',
-  ADD_INSITUTION: 'add-institution',
+  ADD_INSTITUTION: 'add-institution',
   DELETE_INSTITUTION: 'delete-institution',
   UPDATE_INSTITUTION: 'update-institution',
   ADD_JOB: 'add-job',
@@ -60,7 +60,7 @@ export const ACTIONS = {
 
 function reducer(state: CV, action: any) {
   switch (action.type) {
-    case ACTIONS.ADD_INSITUTION:
+    case ACTIONS.ADD_INSTITUTION:
       return {}
     case ACTIONS.UPDATE_INSTITUTION:
       return {}

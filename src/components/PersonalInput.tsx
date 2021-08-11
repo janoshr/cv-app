@@ -1,5 +1,6 @@
 import React, { FormEvent, useState } from 'react'
 import { ACTIONS, CV } from './Editor'
+import InputField from './InputField';
 
 export default function PersonalInput({ personal, dispatch }: any) {
   const [email, setEmail] = useState(personal.email ?? "");
@@ -7,59 +8,66 @@ export default function PersonalInput({ personal, dispatch }: any) {
   const [lastName, setLastName] = useState(personal.lastName ?? "");
   const [tel, setTel] = useState(personal.tel ?? "")
 
-  function handleSubmit(e:FormEvent){
-    dispatch({type: ACTIONS.UPDATE_PERSONAL, payload: {
-      email: email,
-      firstName: firstName,
-      lastName: lastName,
-      tel: tel
-    }})
+  function handleSubmit(e: FormEvent) {
+    dispatch({
+      type: ACTIONS.UPDATE_PERSONAL, payload: {
+        email: email,
+        firstName: firstName,
+        lastName: lastName,
+        tel: tel
+      }
+    })
     e.preventDefault()
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit} >
-        <div className="input-group mb-3">
-          <label htmlFor="i-fname" className="input-group-text">First Name</label>
-          <input
-            type="text"
-            name="name"
-            id="i-fname"
-            className="form-control"
-            value={firstName}
-            onChange={e => setFirstName(e.target.value)}
-          />
-          <label htmlFor="i-lname" className="input-group-text">Last Name</label>
-          <input
-            type="text"
-            name="name"
-            id="i-lname"
-            className="form-control"
-            value={lastName}
-            onChange={e => setLastName(e.target.value)}  
+        <div className="row">
+          <div className="col">
+            <InputField
+              data={{
+                name: "first-name",
+                id: "first-name",
+                value: firstName,
+                onChange: (e: any) => setFirstName(e.target.value)
+              }}
+              label={{ className: "input-group-text", name: "First Name" }}
+            />
+          </div>
+          <div className="col">
+            <InputField
+              data={{
+                name: "last-name",
+                id: "last-name",
+                value: lastName,
+                onChange: (e: any) => setLastName(e.target.value) 
+              }}
+              label={{ className: "input-group-text", name: "Last Name" }}
+            />
+          </div>
+        </div>
+        <div className="mb-3">
+          <InputField
+            data={{
+              type: "email",
+              name: "email",
+              id: "email",
+              value: email,
+              onChange: (e: any) => setEmail(e.target.value),
+            }}
+            label={{ name: "Email" }}
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="i-email" className="form-label">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="i-email"
-            className="form-control"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="i-tel" className="form-label">Mobile number</label>
-          <input
-            type="text"
-            name="tel"
-            id="i-tel"
-            className="form-control"
-            value={tel}
-            onChange={e => setTel(e.target.value)}
+          <InputField
+            data={{
+              name: "tel",
+              id: "tel",
+              value: tel,
+              onChange: (e: any) => setTel(e.target.value)
+            }}
+            label={{ name: "Mobile Number" }}
           />
         </div>
         <div className="mb-3">
