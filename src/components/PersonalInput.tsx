@@ -1,12 +1,15 @@
 import React, { FormEvent, useState } from 'react'
 import { ACTIONS, CV } from './Editor'
 import InputField from './InputField';
+import SummaryInput from './SummaryInput';
 
 export default function PersonalInput({ personal, dispatch }: any) {
   const [email, setEmail] = useState(personal.email ?? "");
   const [firstName, setFirstName] = useState(personal.firstName ?? "");
   const [lastName, setLastName] = useState(personal.lastName ?? "");
   const [tel, setTel] = useState(personal.tel ?? "")
+  const [linkedIn, setLinkedIn] = useState(personal.linkedIn ?? "");
+  const [title, setTitle] = useState(personal.title ?? "");
 
   function handleSubmit(e: FormEvent) {
     dispatch({
@@ -14,7 +17,9 @@ export default function PersonalInput({ personal, dispatch }: any) {
         email: email,
         firstName: firstName,
         lastName: lastName,
-        tel: tel
+        tel: tel,
+        linkedIn: linkedIn,
+        title: title
       }
     })
     e.preventDefault()
@@ -22,8 +27,9 @@ export default function PersonalInput({ personal, dispatch }: any) {
 
   return (
     <div>
+      <h3>Personal Details</h3>
       <form onSubmit={handleSubmit} >
-        <div className="row">
+        <div className="row mb-2">
           <div className="col">
             <InputField
               data={{
@@ -32,7 +38,7 @@ export default function PersonalInput({ personal, dispatch }: any) {
                 value: firstName,
                 onChange: (e: any) => setFirstName(e.target.value)
               }}
-              label={{ className: "input-group-text", name: "First Name" }}
+              label={{ name: "First Name" }}
             />
           </div>
           <div className="col">
@@ -43,35 +49,64 @@ export default function PersonalInput({ personal, dispatch }: any) {
                 value: lastName,
                 onChange: (e: any) => setLastName(e.target.value) 
               }}
-              label={{ className: "input-group-text", name: "Last Name" }}
+              label={{ name: "Last Name" }}
             />
           </div>
         </div>
-        <div className="mb-3">
-          <InputField
-            data={{
-              type: "email",
-              name: "email",
-              id: "email",
-              value: email,
-              onChange: (e: any) => setEmail(e.target.value),
-            }}
-            label={{ name: "Email" }}
-          />
+        <div className="row mb-2">
+          <div className="col">
+            <InputField
+              data={{
+                type: "email",
+                name: "email",
+                id: "email",
+                value: email,
+                onChange: (e: any) => setEmail(e.target.value),
+              }}
+              label={{ name: "Email" }}
+            />
+          </div>
+          <div className="col">
+            <InputField
+              data={{
+                name: "tel",
+                id: "tel",
+                value: tel,
+                onChange: (e: any) => setTel(e.target.value)
+              }}
+              label={{ name: "Mobile Number" }}
+            />
+          </div>
         </div>
-        <div className="mb-3">
-          <InputField
-            data={{
-              name: "tel",
-              id: "tel",
-              value: tel,
-              onChange: (e: any) => setTel(e.target.value)
-            }}
-            label={{ name: "Mobile Number" }}
-          />
+        <div className="row mb-2">
+          <div className="col">
+            <InputField
+              data={{
+                name: "title",
+                id: "title",
+                value: title,
+                onChange: (e:any) => setTitle(e.target.value)
+              }}
+              label={{name: "Job title"}}
+            />
+          </div>
+          <div className="col">
+            <InputField
+              data={{
+                name: "linkedin",
+                id: "linkedin",
+                value: linkedIn,
+                onChange: (e:any) => setLinkedIn(e.target.value)
+              }}
+              label={{name: "LinkedIn"}}
+            />
+          </div>
         </div>
+        <SummaryInput summary={personal.summary} />
         <div className="mb-3">
-          <button type="submit" className="btn btn-primary btn-block">Save</button>
+          <button type="submit" className="btn btn-primary btn-block">
+            Save
+          </button>
         </div>
       </form>
     </div>

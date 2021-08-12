@@ -31,9 +31,11 @@ interface Personal {
   firstName: string,
   lastName: string,
   email: string,
+  title?: string,
   tel?: string,
-  linkedin?: string,
+  linkedIn?: string,
   website?: string,
+  summary: string,
 }
 
 export interface CV {
