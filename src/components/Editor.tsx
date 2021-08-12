@@ -70,7 +70,7 @@ function reducer(state: CV, action: any) {
     case ACTIONS.DELETE_INSTITUTION:
       return {}
     case ACTIONS.UPDATE_PERSONAL:
-      return { ...state, personal: action.payload}
+      return { ...state, personal: action.payload }
     default:
       return state
   }
@@ -85,7 +85,7 @@ export default function Editor() {
       <aside className={`${styles.aside} col-6`}>
         <div className="container">
           <h1>CV editor</h1>
-          
+
           <PersonalInput dispatch={dispatch} personal={state.personal} />
         </div>
       </aside>

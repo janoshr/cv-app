@@ -47,7 +47,7 @@ export default function PersonalInput({ personal, dispatch }: any) {
                 name: "last-name",
                 id: "last-name",
                 value: lastName,
-                onChange: (e: any) => setLastName(e.target.value) 
+                onChange: (e: any) => setLastName(e.target.value)
               }}
               label={{ name: "Last Name" }}
             />
@@ -85,9 +85,9 @@ export default function PersonalInput({ personal, dispatch }: any) {
                 name: "title",
                 id: "title",
                 value: title,
-                onChange: (e:any) => setTitle(e.target.value)
+                onChange: (e: any) => setTitle(e.target.value)
               }}
-              label={{name: "Job title"}}
+              label={{ name: "Job title" }}
             />
           </div>
           <div className="col">
@@ -96,9 +96,9 @@ export default function PersonalInput({ personal, dispatch }: any) {
                 name: "linkedin",
                 id: "linkedin",
                 value: linkedIn,
-                onChange: (e:any) => setLinkedIn(e.target.value)
+                onChange: (e: any) => setLinkedIn(e.target.value)
               }}
-              label={{name: "LinkedIn"}}
+              label={{ name: "LinkedIn" }}
             />
           </div>
         </div>

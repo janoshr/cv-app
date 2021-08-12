@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function SummaryInput({ summary }:any) {
+export default function SummaryInput({ summary }: any) {
   return (
     <>
       <label htmlFor="summary">Summary</label>
@@ -36,9 +36,9 @@ export default function SummaryInput({ summary }:any) {
       <div className="mb-3">
         <textarea className="form-control" id="summary" name="summary">
           {
-          // TODO markdown parsing and rich text display
-          // TODO make element controlled
-          // TODO connect up buttons
+            // TODO markdown parsing and rich text display
+            // TODO make element controlled
+            // TODO connect up buttons
           }
         </textarea>
       </div>
