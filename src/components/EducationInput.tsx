@@ -1,5 +1,6 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react'
-import { ACTIONS, Institution } from './Editor'
+import { Institution } from '../lib/cvTypes'
+import { ACTIONS } from '../lib/actions'
 
 export default function EducationInput({ education, dispatch }: any) {
   const [institutions, setInstitutions] = useState(education ? { list: education } : { list: [] })

@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from 'react'
-import { ACTIONS, CV } from './Editor'
+import { Action, ACTIONS } from '../lib/actions';
 import InputField from './InputField';
 import SummaryInput from './SummaryInput';
 
@@ -12,7 +12,7 @@ export default function PersonalInput({ personal, dispatch }: any) {
   const [title, setTitle] = useState(personal.title ?? "");
 
   function handleSubmit(e: FormEvent) {
-    dispatch({
+    let action:Action = {
       type: ACTIONS.UPDATE_PERSONAL, payload: {
         email: email,
         firstName: firstName,
@@ -21,7 +21,8 @@ export default function PersonalInput({ personal, dispatch }: any) {
         linkedIn: linkedIn,
         title: title
       }
-    })
+    }
+    dispatch(action)
     e.preventDefault()
   }
 
