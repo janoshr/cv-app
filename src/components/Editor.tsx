@@ -3,17 +3,18 @@ import styles from '../styles/Editor.module.scss'
 import PersonalInput from './PersonalInput';
 import { CV } from '../lib/cvTypes'
 import { ACTIONS } from '../lib/actions'
+import EducationInput from './EducationInput';
 
 let sections = ['personal', 'education', 'experience', 'skills']
 
 function reducer(state: CV, action: any) {
   switch (action.type) {
-    case ACTIONS.ADD_INSTITUTION:
+    case ACTIONS.ADD_SCHOOL:
       return {}
-    case ACTIONS.UPDATE_INSTITUTION:
+    case ACTIONS.UPDATE_SCHOOL:
       return {}
 
-    case ACTIONS.DELETE_INSTITUTION:
+    case ACTIONS.DELETE_SCHOOL:
       return {}
     case ACTIONS.UPDATE_PERSONAL:
       return { ...state, personal: action.payload }
@@ -33,6 +34,7 @@ export default function Editor() {
           <h1>CV editor</h1>
 
           <PersonalInput dispatch={dispatch} personal={state.personal} />
+          <EducationInput dispatch={dispatch} education={state.education} />
         </div>
       </aside>
       

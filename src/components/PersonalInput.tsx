@@ -1,7 +1,7 @@
 import React, { FormEvent, useState } from 'react'
 import { Action, ACTIONS } from '../lib/actions';
 import InputField from './InputField';
-import SummaryInput from './SummaryInput';
+import SummaryInput from './TextareaInput';
 
 export default function PersonalInput({ personal, dispatch }: any) {
   const [email, setEmail] = useState(personal.email ?? "");
@@ -33,23 +33,19 @@ export default function PersonalInput({ personal, dispatch }: any) {
         <div className="row mb-2">
           <div className="col">
             <InputField
-              data={{
-                name: "first-name",
-                id: "first-name",
-                value: firstName,
-                onChange: (e: any) => setFirstName(e.target.value)
-              }}
+              name="first-name"
               label={{ name: "First Name" }}
+              id="first-name"
+              value={firstName}
+              onChange={(e: any) => setFirstName(e.target.value)}
             />
           </div>
           <div className="col">
             <InputField
-              data={{
-                name: "last-name",
-                id: "last-name",
-                value: lastName,
-                onChange: (e: any) => setLastName(e.target.value)
-              }}
+              name="last-name"
+              id="last-name"
+              value={lastName}
+              onChange={(e: any) => setLastName(e.target.value)}
               label={{ name: "Last Name" }}
             />
           </div>
@@ -57,24 +53,20 @@ export default function PersonalInput({ personal, dispatch }: any) {
         <div className="row mb-2">
           <div className="col">
             <InputField
-              data={{
-                type: "email",
-                name: "email",
-                id: "email",
-                value: email,
-                onChange: (e: any) => setEmail(e.target.value),
-              }}
+              type="email"
+              name="email"
+              id="email"
+              value={email}
+              onChange={(e: any) => setEmail(e.target.value)}
               label={{ name: "Email" }}
             />
           </div>
           <div className="col">
             <InputField
-              data={{
-                name: "tel",
-                id: "tel",
-                value: tel,
-                onChange: (e: any) => setTel(e.target.value)
-              }}
+              name="tel"
+              id="tel"
+              value={tel}
+              onChange={(e: any) => setTel(e.target.value)}
               label={{ name: "Mobile Number" }}
             />
           </div>
@@ -82,28 +74,24 @@ export default function PersonalInput({ personal, dispatch }: any) {
         <div className="row mb-2">
           <div className="col">
             <InputField
-              data={{
-                name: "title",
-                id: "title",
-                value: title,
-                onChange: (e: any) => setTitle(e.target.value)
-              }}
+              name="title"
+              id="title"
+              value={title}
+              onChange={(e: any) => setTitle(e.target.value)}
               label={{ name: "Job title" }}
             />
           </div>
           <div className="col">
             <InputField
-              data={{
-                name: "linkedin",
-                id: "linkedin",
-                value: linkedIn,
-                onChange: (e: any) => setLinkedIn(e.target.value)
-              }}
+              name="linkedin"
+              id="linkedin"
+              value={linkedIn}
+              onChange={(e: any) => setLinkedIn(e.target.value)}
               label={{ name: "LinkedIn" }}
             />
           </div>
         </div>
-        <SummaryInput summary={personal.summary} />
+        <SummaryInput content={personal.summary} label="Summary" />
         <div className="mb-3">
           <button type="submit" className="btn btn-primary btn-block">
             Save

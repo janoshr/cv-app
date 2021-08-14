@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function SummaryInput({ summary }: any) {
+export default function TextareaInput({ content, label }: any) {
   return (
-    <>
-      <label htmlFor="summary">Summary</label>
+    <div className="mb-2">
+      <label htmlFor="summary">{label}</label>
       <div className="btn-toolbar" role="toolbar">
         <div className="btn-group" role="group">
           <button className="btn btn-primary">
@@ -34,7 +34,7 @@ export default function SummaryInput({ summary }: any) {
         </div>
       </div>
       <div className="mb-3">
-        <textarea className="form-control" id="summary" name="summary">
+        <textarea className="form-control" id={label} name={label}>
           {
             // TODO markdown parsing and rich text display
             // TODO make element controlled
@@ -42,6 +42,6 @@ export default function SummaryInput({ summary }: any) {
           }
         </textarea>
       </div>
-    </>
+    </div>
   )
 }

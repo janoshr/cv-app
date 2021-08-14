@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function InputField({ data, label }: any) {
-  let id = `${data?.id}-input`
+export default function InputField({ label, ...props}:any) {
+  let id = `${props?.id}-input`
   return (
     <>
       {label &&
@@ -10,13 +10,10 @@ export default function InputField({ data, label }: any) {
         </label>
       }
       <input
-        type={data.type ?? "text"}
-        name={data.name}
+        type="text"
+        className="form-control"
+        {...props}
         id={id}
-        className={data.className ?? "form-control"}
-        value={data.value}
-        onChange={data.onChange}
-        placeholder={data.placeholder ?? ""}
       />
     </>
   )

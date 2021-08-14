@@ -6,9 +6,9 @@ import * as CV from './cvTypes';
  */
 export const ACTIONS = {
   UPDATE_PERSONAL: 'UPDATE_PERSONAL',
-  ADD_INSTITUTION: 'ADD_INSTITUTION',
-  UPDATE_INSTITUTION: 'UPDATE_INSTITUTION',
-  DELETE_INSTITUTION: 'DELETE_INSTITUTION',
+  ADD_SCHOOL: 'ADD_SCHOOL',
+  UPDATE_SCHOOL: 'UPDATE_SCHOOL',
+  DELETE_SCHOOL: 'DELETE_SCHOOL',
   ADD_JOB: 'ADD_JOB',
   UPDATE_JOB: 'UPDATE_JOB',
   DELETE_JOB: 'DELETE_JOB',
@@ -22,9 +22,9 @@ export const ACTIONS = {
  */
 export type Action = 
   | { type: typeof ACTIONS.UPDATE_PERSONAL, payload: CV.Personal }
-  | { type: typeof ACTIONS.ADD_INSTITUTION, payload: CV.Institution }
-  | { type: typeof ACTIONS.UPDATE_INSTITUTION, payload: CV.Institution }
-  | { type: typeof ACTIONS.DELETE_INSTITUTION, payload: number}
+  | { type: typeof ACTIONS.ADD_SCHOOL, payload: CV.School }
+  | { type: typeof ACTIONS.UPDATE_SCHOOL, payload: CV.School }
+  | { type: typeof ACTIONS.DELETE_SCHOOL, payload: number}
   | { type: typeof ACTIONS.ADD_JOB, payload: CV.Job }
   | { type: typeof ACTIONS.UPDATE_JOB, payload: CV.Job}
   | { type: typeof ACTIONS.DELETE_JOB, payload: number }

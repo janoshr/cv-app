@@ -1,25 +1,27 @@
 /**
  * Education history entry
  */
-export interface Institution {
+export interface School {
   index: number,
   name: string,
-  qualification?: string,
+  degree?: string,
   from?: Date,
   to?: Date | false,
-  description?: string
+  description?: string,
+  city?: string,
 }
 /**
  * Employment history entry
  */
 export interface Job {
   index: number,
-  company: string,
+  employer: string,
   title: string,
   location?: string,
   from?: Date,
   to?: Date | false,
   description?: string,
+  city?: string,
 }
 /**
  * Personal skill entry
@@ -48,7 +50,7 @@ export interface Personal {
  */
 export interface CV {
   personal?: Personal,
-  education?: Institution[],
+  education?: School[],
   experience?: Job[],
   skills?: Skill[],
   other?: any
