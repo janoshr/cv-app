@@ -6,7 +6,7 @@ export interface School {
   name: string,
   degree?: string,
   from?: string,
-  to?: string | false,
+  to?: string,
   description?: string,
   city?: string,
 }
@@ -19,7 +19,7 @@ export interface Job {
   title: string,
   location?: string,
   from?: string,
-  to?: string | false,
+  to?: string,
   description?: string,
   city?: string,
 }
