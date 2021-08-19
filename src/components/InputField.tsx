@@ -1,15 +1,16 @@
 import React from 'react'
+import { Form } from 'react-bootstrap'
 
 export default function InputField({ label, ...props}:any) {
   let id = `${props?.id}-input`
   return (
     <>
       {label &&
-        <label className={label.className ?? "form-label"} htmlFor={id}>
+        <Form.Label htmlFor={id}>
           {label.name}
-        </label>
+        </Form.Label>
       }
-      <input
+      <Form.Control
         type="text"
         className="form-control"
         {...props}

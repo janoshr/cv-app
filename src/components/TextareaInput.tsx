@@ -1,47 +1,48 @@
 import React from 'react'
+import { Button, ButtonGroup, ButtonToolbar, Form } from 'react-bootstrap'
 
-export default function TextareaInput({ content, label }: any) {
+export default function TextareaInput({ content, label, id }: any) {
   return (
-    <div className="mb-2">
-      <label htmlFor="summary">{label}</label>
-      <div className="btn-toolbar" role="toolbar">
-        <div className="btn-group" role="group">
-          <button className="btn btn-primary">
+    <Form.Group className="mb-2" controlId={id}>
+      <Form.Label>{label}</Form.Label>
+      <ButtonToolbar>
+        <ButtonGroup>
+          <Button variant="primary">
             <b>B</b>
-          </button>
-          <button className="btn btn-primary">
+          </Button>
+          <Button variant="primary">
             <i>I</i>
-          </button>
-          <button className="btn btn-primary">
+          </Button>
+          <Button variant="primary">
             <u>U</u>
-          </button>
-          <button className="btn btn-primary">
+          </Button>
+          <Button variant="primary">
             <del>S</del>
-          </button>
-        </div>
-        <div className="btn-group" role="group">
-          <button className="btn btn-primary">
+          </Button>
+        </ButtonGroup>
+        <ButtonGroup>
+          <Button variant="primary">
             <i className="bi bi-list-ol"></i>
-          </button>
-          <button className="btn btn-primary">
+          </Button>
+          <Button variant="primary">
             <i className="bi bi-list-ul"></i>
-          </button>
-        </div>
-        <div className="btn-group" role="group">
-          <button className="btn btn-primary">
+          </Button>
+        </ButtonGroup>
+        <ButtonGroup>
+          <Button variant="primary">
             <i className="bi bi-link-45deg"></i>
-          </button>
-        </div>
-      </div>
+          </Button>
+        </ButtonGroup>
+      </ButtonToolbar>
       <div className="mb-3">
-        <textarea className="form-control" id={label} name={label}>
+        <Form.Control name={label}>
           {
             // TODO markdown parsing and rich text display
             // TODO make element controlled
             // TODO connect up buttons
           }
-        </textarea>
+        </Form.Control>
       </div>
-    </div>
+    </Form.Group>
   )
 }

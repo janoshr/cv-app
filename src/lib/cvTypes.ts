@@ -5,8 +5,8 @@ export interface School {
   index: number,
   name: string,
   degree?: string,
-  from?: Date,
-  to?: Date | false,
+  from?: string,
+  to?: string | false,
   description?: string,
   city?: string,
 }
@@ -18,8 +18,8 @@ export interface Job {
   employer: string,
   title: string,
   location?: string,
-  from?: Date,
-  to?: Date | false,
+  from?: string,
+  to?: string | false,
   description?: string,
   city?: string,
 }
